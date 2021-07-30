@@ -42,6 +42,7 @@ namespace Dashbord {
 			this.pnlServicioGuia = new System.Windows.Forms.Panel();
 			this.panelRV.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pibUsuario)).BeginInit();
+			this.pnlServicioGuia.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelRV
@@ -172,7 +173,7 @@ namespace Dashbord {
 			this.rdoSi.AutoSize = true;
 			this.rdoSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.rdoSi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
-			this.rdoSi.Location = new System.Drawing.Point(414, 355);
+			this.rdoSi.Location = new System.Drawing.Point(23, 47);
 			this.rdoSi.Name = "rdoSi";
 			this.rdoSi.Size = new System.Drawing.Size(38, 20);
 			this.rdoSi.TabIndex = 10;
@@ -223,6 +224,7 @@ namespace Dashbord {
 			// 
 			// pnlServicioGuia
 			// 
+			this.pnlServicioGuia.Controls.Add(this.rdoSi);
 			this.pnlServicioGuia.Location = new System.Drawing.Point(382, 308);
 			this.pnlServicioGuia.Name = "pnlServicioGuia";
 			this.pnlServicioGuia.Size = new System.Drawing.Size(223, 84);
@@ -237,7 +239,6 @@ namespace Dashbord {
 			this.Controls.Add(this.btnCloseForm);
 			this.Controls.Add(this.btnAceptar);
 			this.Controls.Add(this.rdoNo);
-			this.Controls.Add(this.rdoSi);
 			this.Controls.Add(this.lblServicioGuia);
 			this.Controls.Add(this.cmbVisita);
 			this.Controls.Add(this.cmbEntrada);
@@ -253,6 +254,8 @@ namespace Dashbord {
 			this.Load += new System.EventHandler(this.ElegirTarifa_Load);
 			this.panelRV.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pibUsuario)).EndInit();
+			this.pnlServicioGuia.ResumeLayout(false);
+			this.pnlServicioGuia.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
