@@ -89,23 +89,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSIDataSet.xsd</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Entities\DetalleExposicion.cs" />
-    <Compile Include="Entities\Sede.cs" />
-    <Compile Include="Entities\Usuario.cs" />
-    <Compile Include="Entities\Entrada.cs" />
-    <Compile Include="Entities\Exposicion.cs" />
-    <Compile Include="Entities\Obra.cs" />
-    <Compile Include="Entities\ReservaVisita.cs" />
-    <Compile Include="Entities\Tarifa.cs" />
-    <Compile Include="Entities\TipoEntrada.cs" />
-    <Compile Include="Entities\TipoVisita.cs" />
-=======
     <Compile Include="Entities\Entrada.cs" />
     <Compile Include="Entity\Tarifa.cs" />
     <Compile Include="Entity\TipoEntrada.cs" />
     <Compile Include="Entity\TipoVisita.cs" />
->>>>>>> main
     <Compile Include="Forms\DetalleEntradas.cs">
       <SubType>Form</SubType>
     </Compile>
