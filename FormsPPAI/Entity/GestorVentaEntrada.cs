@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dashbord.DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -37,10 +38,16 @@ namespace Dashbord.Entity
             Sede = sede;
         }
 
-        private int obtenerSede()
+        public int obtenerSede()
         {
             int sede = logueado.IdSede;
             return sede;
+        }
+
+        public DataTable obtenerTarifasVigentes()
+        {
+            var sede = new Sede();
+            return sede.obtenerTarifasVigentes();
         }
     }
 }

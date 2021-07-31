@@ -1,4 +1,4 @@
-﻿using Dashbord.DataAccessLayer;
+﻿using Dashbord.Entity;
 using System;
 using System.Windows.Forms;
 
@@ -15,9 +15,10 @@ namespace Dashbord {
 		private void btnAceptar_Click(object sender, EventArgs e) => new ElegirTarifa(username).ShowDialog();
 
 		private void TarifasSede_Load(object sender, EventArgs e) {
-			lblCargo.Text = UsuarioAdapter.ReadCargo(username).Rows[0][0].ToString();
+			var gestor = new GestorVentaEntrada();
 
-			dtgTarifaSede.DataSource = TarifaAdapter.ReadTarifasWithMontos();
+			lblCargo.Text = gestor.buscarEmpleadoLogueado().Apellido;
+			dtgTarifaSede.DataSource = gestor.obtenerTarifasVigentes();
 		}
 
 		private void btnCloseForm_Click(object sender, EventArgs e) => Close();

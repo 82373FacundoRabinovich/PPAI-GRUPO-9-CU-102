@@ -260,3 +260,17 @@ C:\Users\facur\Documents\FACULTAD\3RO\PAV1\PROYECTOS\PPAI-GRUPO-9-CU-102\FormsPP
 C:\Users\facur\Documents\FACULTAD\3RO\PAV1\PROYECTOS\PPAI-GRUPO-9-CU-102\FormsPPAI\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\facur\Documents\FACULTAD\3RO\PAV1\PROYECTOS\PPAI-GRUPO-9-CU-102\FormsPPAI\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\facur\Documents\FACULTAD\3RO\PAV1\PROYECTOS\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.csproj.CopyComplete
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.csproj.AssemblyReference.cache
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.DetalleEntradas.resources
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.ElegirEntradas.resources
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.ElegirTarifa.resources
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.OpcionesRV.resources
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.Principal.resources
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.IniciarSesion.resources
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.TarifasSede.resources
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.Forms.Ticket.resources
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.Properties.Resources.resources
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.csproj.GenerateResource.cache
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.csproj.CoreCompileInputs.cache
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.exe
+C:\Users\sicro\Documents\GitHub\PPAI-GRUPO-9-CU-102\FormsPPAI\obj\Debug\Dashbord.pdb

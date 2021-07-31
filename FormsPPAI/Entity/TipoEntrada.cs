@@ -8,18 +8,7 @@ namespace Dashbord.Entity
 {
     public class TipoEntrada
     {
-        private int monto;
-        private int nombre;
-
-        public int Monto
-        {
-            get => monto;
-            set => monto = value;
-        }
-        public int Nombre
-        {
-            get => nombre;
-            set => nombre = value;
-        }
+        private int monto { get; set; }
+        private int nombre { get; set; }
     }
 }
