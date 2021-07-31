@@ -90,6 +90,7 @@
       <DependentUpon>DSIDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Entities\Entrada.cs" />
+    <Compile Include="Entity\Empleado.cs" />
     <Compile Include="Entity\Entrada.cs" />
     <Compile Include="Entity\GestorVentaEntrada.cs" />
     <Compile Include="Entity\Obra.cs" />

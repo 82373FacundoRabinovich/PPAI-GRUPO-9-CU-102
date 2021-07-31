@@ -8,11 +8,11 @@ namespace Dashbord.Entity
     {
         public DateTime FechaFin { get; set; }
         public DateTime FechaInicio { get; set; }
-        public DataTable getEmpleadoEnSesion()
+        public Empleado getEmpleadoEnSesion()
         {
             var user = new Usuario();
-            DataTable tabla = user.obtenerEmpleado();
-            return tabla;
+            Empleado empleado = user.obtenerEmpleado();
+            return empleado;
         }
     }
 }

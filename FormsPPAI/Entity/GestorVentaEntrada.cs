@@ -19,16 +19,28 @@ namespace Dashbord.Entity
         public int Sede { get; set; }
         public int Sesion { get; set; }
 
+        public Empleado logueado { get; set; }
         public void opcionVentaEntrada()
         {
-            DataTable tabla = new DataTable();
-            tabla = buscarEmpleadoLogueado();
+            Empleado empleado = buscarEmpleadoLogueado();
+            Empleado = empleado.Dni;
         }
-        public DataTable buscarEmpleadoLogueado()
+        public Empleado buscarEmpleadoLogueado()
         {
             var sesion = new Sesion();
-            DataTable tabla = sesion.getEmpleadoEnSesion();
-            return tabla;
+            Empleado empleado = sesion.getEmpleadoEnSesion();
+            return empleado;
+        }
+        public void buscarSede()
+        {
+            int sede = obtenerSede();
+            Sede = sede;
+        }
+
+        private int obtenerSede()
+        {
+            int sede = logueado.IdSede;
+            return sede;
         }
     }
 }
