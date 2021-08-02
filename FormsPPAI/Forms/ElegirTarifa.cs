@@ -41,9 +41,9 @@ namespace Dashbord {
             {
 				servicioGuia = true;
             }
-			GestorVentaEntrada.tomarSeleccionTarifa(int.Parse(cmbEntrada.SelectedValue.ToString()));
+			GestorVentaEntrada.tomarSeleccionTarifa(int.Parse(cmbEntrada.SelectedValue.ToString()), int.Parse(cmbVisita.SelectedValue.ToString()),servicioGuia);
 			MessageBox.Show("Se guardo la tarifa correctamente");
-			//new ElegirEntradas(int.Parse(cmbEntrada.SelectedValue.ToString(), int.Parse(cmbVisita.ToString(),servicioGuia).ShowDialog;
+			//new ElegirEntradas(int.Parse(cmbEntrada.SelectedValue.ToString()), int.Parse(cmbVisita.ToString()),servicioGuia).ShowDialog();
 
 			// TODO: preguntarle a la profe que hacer con este dato
 			//ObraAdapter.ReadTiempo();

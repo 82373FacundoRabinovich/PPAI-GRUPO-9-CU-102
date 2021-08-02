@@ -1,45 +1,53 @@
 ﻿using Dashbord.DataAccessLayer;
 using System;
 using System.Windows.Forms;
+using Dashbord.Entity;
 
 namespace Dashbord {
 	public partial class ElegirEntradas : Form {
-		private string username;
-		private string tipoEntrada;
-		private string tipoVisita;
+		//private string username;
+		private int tipoEntrada;
+		private int tipoVisita;
 		private bool hayGuia;
-		private int tiempo;
+		private int idSede;
+		//private int tiempo;
 
-		public ElegirEntradas(/*string username,*/ int tipoEntrada, int tipoVisita, bool hayGuia/*, int tiempo*/) {
+		public ElegirEntradas(/*string username,*/ int tipoEntrada, int tipoVisita, bool hayGuia, int idSede/*, int tiempo*/) {
 			InitializeComponent();
 
 			//this.username = username;
 			this.tipoEntrada = tipoEntrada;
 			this.tipoVisita = tipoVisita;
 			this.hayGuia = hayGuia;
+			this.idSede = idSede;
+
 			//this.tiempo = tiempo;
 		}
 
 		private void btnCloseForm_Click(object sender, EventArgs e) => Close();
 
-		private void btnAceptar_Click(object sender, EventArgs e) {
-			if (txtNroEntradas.Text.Equals("")) {
+		private void ElegirEntradas_Load(object sender, EventArgs e) {
+			string username = "tanomartinoli";
+			lblCargo.Text = UsuarioAdapter.ReadCargo(username).Rows[0][0].ToString();
+			string id = idSede.ToString();
+			lblMaximo.Text = $"Maximo: {SedeAdapter.ReadMaxEntradas(id) - EntradaAdapter.ReadCantEntradas()} entradas en la \nSede {UsuarioAdapter.ReadSede(username).Rows[0][0]}";
+		}
+
+        private void tomarCantidadEntradas(object sender, EventArgs e)
+        {
+			if (txtNroEntradas.Text.Equals(""))
+			{
 				MessageBox.Show("Insertar datos.");
 				return;
 			}
 
-			if (int.Parse(txtNroEntradas.Text.Trim()) > (SedeAdapter.ReadMaxEntradas() - EntradaAdapter.ReadCantEntradas())) {
-				MessageBox.Show("Numero de entradas maximo superado.");
-				return;
-			}
-
-			new DetalleEntradas(username, tipoEntrada, tipoVisita, hayGuia, int.Parse(txtNroEntradas.Text.Trim())).ShowDialog();
-		}
-
-		private void ElegirEntradas_Load(object sender, EventArgs e) {
-			lblCargo.Text = UsuarioAdapter.ReadCargo(username).Rows[0][0].ToString();
-
-			lblMaximo.Text = $"Maximo: {SedeAdapter.ReadMaxEntradas() - EntradaAdapter.ReadCantEntradas()} entradas en la \nSede {UsuarioAdapter.ReadSede(username).Rows[0][0]}";
+			//if (int.Parse(txtNroEntradas.Text.Trim()) > (SedeAdapter.ReadMaxEntradas() - EntradaAdapter.ReadCantEntradas()))
+			//{
+			//	MessageBox.Show("Numero de entradas maximo superado.");
+			//	return;
+			//}
+			GestorVentaEntrada.tomarCantidadEntradas(int.Parse(lblNroEntradas.Text));
+			//new DetalleEntradas(username, tipoEntrada, tipoVisita, hayGuia, int.Parse(txtNroEntradas.Text.Trim())).ShowDialog();
 		}
     }
 }

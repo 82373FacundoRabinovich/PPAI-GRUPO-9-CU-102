@@ -58,16 +58,27 @@ namespace Dashbord.Entity
             pantalla.mostrarTarifasVigentes(tablaTarifas);
             pantalla.ShowDialog();
         }
-        public static void tomarSeleccionTarifa(int idEntrada)
+        public static void tomarSeleccionTarifa(int idEntrada, int idVisita, bool servicioGuia)
         {
             Entrada = idEntrada;
             buscarExposicionVigente();
+            new ElegirEntradas(idEntrada, idVisita, servicioGuia, Sede).ShowDialog();
         }
 
-        private static void buscarExposicionVigente()
+        public static void buscarExposicionVigente()
         {
             var Actual = new Sede();
             var duracionesObra = Actual.calcularDuracionExposicionesVigentes();
+        }
+        public static void tomarCantidadEntradas(int nroEntradas)
+        {
+            buscarCapacidadSede(nroEntradas);
+        }
+
+        private static void buscarCapacidadSede(int nroEntradas)
+        {
+            var Actual = new Sede();
+            int cantidadMaxima = Actual.mostrarCantidadMaximaVisitantes(Sede);
         }
     }
 }

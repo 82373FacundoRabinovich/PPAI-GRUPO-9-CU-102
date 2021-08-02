@@ -114,7 +114,7 @@ namespace Dashbord {
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.tomarCantidadEntradas);
             // 
             // lblNroEntradas
             // 

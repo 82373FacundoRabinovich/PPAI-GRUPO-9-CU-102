@@ -49,5 +49,11 @@ namespace Dashbord.Entity
             }
             return duracionObrasExpuestas;
         }
+        public int mostrarCantidadMaximaVisitantes(int idSede)
+        {
+            string id = idSede.ToString();
+            int cantidadMaxima = SedeAdapter.ReadMaxEntradas(id);
+            return cantidadMaxima;
+        }
     }
 }
