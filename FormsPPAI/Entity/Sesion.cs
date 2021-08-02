@@ -8,11 +8,11 @@ namespace Dashbord.Entity
     {
         public DateTime FechaFin { get; set; }
         public DateTime FechaInicio { get; set; }
-        public Empleado getEmpleadoEnSesion()
+        public Tuple<Empleado,int> getEmpleadoEnSesion()
         {
             var user = new Usuario();
-            Empleado empleado = user.obtenerEmpleado();
-            return empleado;
+            var tupla = user.obtenerEmpleado();
+            return tupla;
         }
     }
 }

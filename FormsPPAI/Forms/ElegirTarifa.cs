@@ -1,4 +1,5 @@
 ﻿using Dashbord.DataAccessLayer;
+using Dashbord.Entity;
 using Dashbord.Utilities;
 using System;
 using System.Data.SqlClient;
@@ -20,24 +21,34 @@ namespace Dashbord {
 			lblCargo.Text = UsuarioAdapter.ReadCargo(username).Rows[0][0].ToString();
 
 			try {
-				Generics.LoadComboBox(cmbEntrada, "nombre", () => TiposEntradasAdapter.ReadTipoEntrada());
-				Generics.LoadComboBox(cmbVisita, "nombre", () => TiposVisitasAdapter.ReadTiposVisitas());
+				Generics.LoadComboBox(cmbEntrada, "nombre", "id" ,() => TiposEntradasAdapter.ReadTipoEntrada());
+				Generics.LoadComboBox(cmbVisita, "nombre", "id", () => TiposVisitasAdapter.ReadTiposVisitas());
 			} catch (SqlException) {
 				MessageBox.Show("Error con la base de datos.");
 				Application.Exit();
 			}
 		}
 
-		private void btnAceptar_Click(object sender, EventArgs e) {
-			if (cmbEntrada.SelectedIndex == -1 && cmbVisita.SelectedIndex == -1 && (rdoSi.Checked || rdoNo.Checked)) {
+        private void tomarSeleccionTarifa(object sender, EventArgs e)
+        {
+			if (cmbEntrada.SelectedIndex == -1 && cmbVisita.SelectedIndex == -1 && (rdoSi.Checked || rdoNo.Checked))
+			{
 				MessageBox.Show("Insertar todos los datos.");
 				return;
 			}
+			bool servicioGuia = false;
+            if (rdoSi.Checked)
+            {
+				servicioGuia = true;
+            }
+			GestorVentaEntrada.tomarSeleccionTarifa(int.Parse(cmbEntrada.SelectedValue.ToString()));
+			MessageBox.Show("Se guardo la tarifa correctamente");
+			//new ElegirEntradas(int.Parse(cmbEntrada.SelectedValue.ToString(), int.Parse(cmbVisita.ToString(),servicioGuia).ShowDialog;
 
 			// TODO: preguntarle a la profe que hacer con este dato
-			ObraAdapter.ReadTiempo();
+			//ObraAdapter.ReadTiempo();
 
-			new ElegirEntradas(username, cmbEntrada.SelectedValue.ToString(), cmbVisita.SelectedValue.ToString(), rdoSi.Checked, TiempoAdapter.ReadDuracion()).ShowDialog();
+			//new ElegirEntradas(username, cmbEntrada.SelectedValue.ToString(), cmbVisita.SelectedValue.ToString(), rdoSi.Checked, TiempoAdapter.ReadDuracion()).ShowDialog();
 		}
 	}
 }

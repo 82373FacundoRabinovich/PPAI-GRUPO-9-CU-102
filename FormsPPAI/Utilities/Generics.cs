@@ -8,12 +8,13 @@ namespace Dashbord.Utilities {
 	class Generics {
 		public static int CheckedRadioButton(Panel panel, List<string> elements) => elements.IndexOf(panel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Text);
 
-		public static void LoadComboBox(ComboBox comboBox, string attribute, Func<DataTable> query) {
+		public static void LoadComboBox(ComboBox comboBox, string attribute, string index, Func<DataTable> query) {
 			DataTable dataTable = query();
 
 			comboBox.DataSource = dataTable;
 			comboBox.DisplayMember = attribute;
 			comboBox.SelectedIndex = -1;
+			comboBox.ValueMember = index;
 		}
 
 		public static void CleanFields(Form form) {

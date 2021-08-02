@@ -20,7 +20,6 @@ namespace Dashbord.Entity
                 tarifa.ItemArray[0].ToString();
                 tarifa.ItemArray[1].ToString();
             }
-
             return tarifas;
         }
     }

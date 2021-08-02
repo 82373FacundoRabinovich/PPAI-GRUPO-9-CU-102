@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessLayer\EntradaAdapter.cs" />
+    <Compile Include="DataAccessLayer\ExposicionAdapter.cs" />
     <Compile Include="DataAccessLayer\ObraAdapter.cs" />
     <Compile Include="DataAccessLayer\PrecioAdapter.cs" />
     <Compile Include="DataAccessLayer\SedeAdapter.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Entities\Entrada.cs" />
     <Compile Include="Entity\Empleado.cs" />
     <Compile Include="Entity\Entrada.cs" />
+    <Compile Include="Entity\Exposicion.cs" />
     <Compile Include="Entity\GestorVentaEntrada.cs" />
     <Compile Include="Entity\Obra.cs" />
     <Compile Include="Entity\ReservaVisita.cs" />

@@ -9,45 +9,65 @@ using System.Threading.Tasks;
 
 namespace Dashbord.Entity
 {
-    public class GestorVentaEntrada
+    public static class GestorVentaEntrada
     {
-        public int Empleado { get; set; }
-        public int Entrada { get; set; }
-        public int ImpresoraEntradas { get; set; }
-        public int PantallaEntrada { get; set; }
-        public int PantallaVentaEntrada { get; set; }
-        public int ReservaVisita { get; set; }
-        public int Sede { get; set; }
-        public int Sesion { get; set; }
+        public static int Empleado { get; set; }
+        public static int Entrada { get; set; }
+        public static int ImpresoraEntradas { get; set; }
+        public static int PantallaEntrada { get; set; }
+        public static int PantallaVentaEntrada { get; set; }
+        public static int ReservaVisita { get; set; }
+        public static int Sede { get; set; }
+        public static int Sesion { get; set; }
 
-        public Empleado logueado { get; set; }
-        public void opcionVentaEntrada()
+        public static Empleado logueado { get; set; }
+        public static void opcionVentaEntrada()
         {
-            Empleado empleado = buscarEmpleadoLogueado();
-            Empleado = empleado.Dni;
+            buscarEmpleadoLogueado();
+            
         }
-        public Empleado buscarEmpleadoLogueado()
+        public static void buscarEmpleadoLogueado()
         {
             var sesion = new Sesion();
-            Empleado empleado = sesion.getEmpleadoEnSesion();
-            return empleado;
+            var tupla = sesion.getEmpleadoEnSesion();
+            logueado = tupla.Item1;
+            Empleado = logueado.Dni;
+            Sesion = tupla.Item2;
+            buscarSede();
         }
-        public void buscarSede()
+        public static void buscarSede()
         {
             int sede = obtenerSede();
             Sede = sede;
+            buscarTarifasDeSede();
         }
 
-        public int obtenerSede()
+        public static int obtenerSede()
         {
             int sede = logueado.IdSede;
             return sede;
         }
 
-        public DataTable obtenerTarifasVigentes()
+        public static void buscarTarifasDeSede()
         {
-            var sede = new Sede();
-            return sede.obtenerTarifasVigentes();
+            var Actual = new Sede();
+            DataTable tablaTarifas = Actual.obtenerTarifasVigentes();
+            //return sedeActual.obtenerTarifasVigentes();
+            string username = "tanomartinoli";
+            TarifasSede pantalla = new TarifasSede(username);
+            pantalla.mostrarTarifasVigentes(tablaTarifas);
+            pantalla.ShowDialog();
+        }
+        public static void tomarSeleccionTarifa(int idEntrada)
+        {
+            Entrada = idEntrada;
+            buscarExposicionVigente();
+        }
+
+        private static void buscarExposicionVigente()
+        {
+            var Actual = new Sede();
+            var duracionesObra = Actual.calcularDuracionExposicionesVigentes();
         }
     }
 }

@@ -10,14 +10,14 @@ namespace Dashbord {
 		private bool hayGuia;
 		private int tiempo;
 
-		public ElegirEntradas(string username, string tipoEntrada, string tipoVisita, bool hayGuia, int tiempo) {
+		public ElegirEntradas(/*string username,*/ int tipoEntrada, int tipoVisita, bool hayGuia/*, int tiempo*/) {
 			InitializeComponent();
 
-			this.username = username;
+			//this.username = username;
 			this.tipoEntrada = tipoEntrada;
 			this.tipoVisita = tipoVisita;
 			this.hayGuia = hayGuia;
-			this.tiempo = tiempo;
+			//this.tiempo = tiempo;
 		}
 
 		private void btnCloseForm_Click(object sender, EventArgs e) => Close();
@@ -41,5 +41,5 @@ namespace Dashbord {
 
 			lblMaximo.Text = $"Maximo: {SedeAdapter.ReadMaxEntradas() - EntradaAdapter.ReadCantEntradas()} entradas en la \nSede {UsuarioAdapter.ReadSede(username).Rows[0][0]}";
 		}
-	}
+    }
 }
