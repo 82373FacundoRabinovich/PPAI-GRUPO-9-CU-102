@@ -78,6 +78,7 @@
     <Compile Include="DataAccessLayer\ExposicionAdapter.cs" />
     <Compile Include="DataAccessLayer\ObraAdapter.cs" />
     <Compile Include="DataAccessLayer\PrecioAdapter.cs" />
+    <Compile Include="DataAccessLayer\ReservaAdapter.cs" />
     <Compile Include="DataAccessLayer\SedeAdapter.cs" />
     <Compile Include="DataAccessLayer\TarifaAdapter.cs" />
     <Compile Include="DataAccessLayer\TiempoAdapter.cs" />
@@ -90,13 +91,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSIDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Entrada.cs" />
     <Compile Include="Entity\Empleado.cs" />
     <Compile Include="Entity\Entrada.cs" />
     <Compile Include="Entity\Exposicion.cs" />
     <Compile Include="Entity\GestorVentaEntrada.cs" />
     <Compile Include="Entity\Obra.cs" />
-    <Compile Include="Entity\ReservaVisita.cs" />
+    <Compile Include="Entity\Reserva.cs" />
     <Compile Include="Entity\Sede.cs" />
     <Compile Include="Entity\Sesion.cs" />
     <Compile Include="Entity\Tarifa.cs" />
