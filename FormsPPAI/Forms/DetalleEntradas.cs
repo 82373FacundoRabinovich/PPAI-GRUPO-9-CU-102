@@ -30,7 +30,7 @@ namespace Dashbord {
 			EntradaAdapter.UpdateEntradas(cantidad.ToString());
 
 			MessageBox.Show("Exito.");
-			//new Ticket().ShowDialog();
+			new Ticket().ShowDialog();
 		}
 
 		private void DetalleEntradas_Load(object sender, System.EventArgs e) {
